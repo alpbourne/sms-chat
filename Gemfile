@@ -46,3 +46,7 @@ gem 'devise', '~> 4.1.0'
 
 # Background Jobs
 gem 'sucker_punch', '~> 2.0'
+
+gem 'twilio-ruby'
+
+gem 'sqlite3'
