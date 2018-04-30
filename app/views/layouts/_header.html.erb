@@ -15,23 +15,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <% if user_signed_in? %>
       <ul class="nav navbar-nav">
-        <li>
-          <%= link_to root_path do %>
-              <%= fa_icon 'home fa-fw', text: 'Home' %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path do %>
-            <%= fa_icon 'book fa-fw', text: 'People' %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to root_path do %>
-              <%= fa_icon 'comments-o fa-fw', text: 'Conversations' %>
-          <% end %>
-        </li>
-
-          </li>
+        <li><%= link_to("Sign Out", destroy_user_session_path, :method => 'delete') %></li>
+         <li><%= link_to "Friends", friends_path %></li>
+         <li><%= link_to "Chats", chats_path %></li>
+        <li><%= link_to "New Friend", new_friend_path %></li>
       </ul>
     <% end %>
       <!--<form class="navbar-form navbar-right" role="search">
