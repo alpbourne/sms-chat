@@ -1,2 +1,7 @@
-<h1>Chats#index</h1>
-<p>Find me in app/views/chats/index.html.erb</p>
+<div class="chats">
+  <% @chats.each do |f| %>
+    <% chat = Friend.find_by(id: f.friend_id) %>
+    <%= chat.name %>
+    <%= link_to "Chat Messages", chat_messages_path(f) %>
+  <% end %>
+</div>

@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :chats do
-  get 'messages/index'
-  end
-
-  get 'chats/index'
-
   resources :friends
   devise_for :users
   root to: 'pages#home'
