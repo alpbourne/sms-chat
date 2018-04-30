@@ -1,4 +1,5 @@
 class FriendsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_friend, only: [:show, :edit, :update, :destroy]
 
   # GET /friends
@@ -24,7 +25,7 @@ class FriendsController < ApplicationController
   # POST /friends
   # POST /friends.json
   def create
-    @friend = Friend.new(friend_params)
+    @friend = current_user.friend.build(friend_params)
 
     respond_to do |format|
       if @friend.save

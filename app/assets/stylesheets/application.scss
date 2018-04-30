@@ -13,15 +13,13 @@
  *= require_tree .
  *= require_self
  */
- $navbar-default-brand-color: red;
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- @import "font-awesome";
-
  .navbar-brand {
    font-weight: bold;
+   color: purple;
  }
 
  html.turbolinks-progress-bar::before {
