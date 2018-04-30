@@ -1,2 +1,12 @@
-<h1>Chats::Messages#index</h1>
-<p>Find me in app/views/chats/messages/index.html.erb</p>
+<h1>Messages with <%=@chat.friend.name%></h1>
+
+<div id="messages">
+  <%= render partial: "message", locals: { message: @message } %>
+</div>
+
+<%= form_for (@message), url: chat_messages_path(@chat) do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, class: 'form-control', placeholder: 'Type your message to send' %>
+  </div>
+    <%= f.submit 'Send Message', class: 'btn btn-primary' %>
+<% end %>
